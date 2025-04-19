@@ -1,186 +1,379 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Occidental Hotel Bistro Menu</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 20px;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #111;
-      color: #fff;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-    }
-
-    .menu-container {
-      background-color: rgba(34, 34, 34, 0.95);
-      padding: 30px 20px;
-      max-width: 700px;
-      width: 100%;
-      box-shadow: 0 0 20px rgba(0,0,0,0.5);
-      border-radius: 12px;
-    }
-
-    header {
-      text-align: center;
-      margin-bottom: 30px;
-    }
-
-    header h1 {
-      font-size: 2.5em;
-      margin: 0;
-      position: relative;
-      display: inline-block;
-    }
-
-    header h1::after {
-      content: '';
-      display: block;
-      width: 80%;
-      height: 4px;
-      background-color: #8B1F24;
-      margin: 10px auto 0;
-      border-radius: 2px;
-    }
-
-    header .tagline {
-      color: #bbb;
-      font-size: 1.1em;
-      margin-top: 8px;
-    }
-
-    .menu-section {
-      margin-bottom: 30px;
-    }
-
-    .menu-section h2 {
-      font-size: 1.5em;
-      color: #fff;
-      margin-bottom: 15px;
-      position: relative;
-      display: inline-block;
-    }
-
-    .menu-section h2::after {
-      content: '';
-      display: block;
-      width: 60%;
-      height: 3px;
-      background-color: #8B1F24;
-      margin-top: 5px;
-      border-radius: 2px;
-    }
-
-    ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    ul li {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 12px;
-      padding-bottom: 6px;
-      border-bottom: 1px solid #333;
-      font-size: 1em;
-      color: #eee;
-    }
-
-    .item-name {
-      font-weight: 500;
-    }
-
-    .item-price {
-      font-weight: 600;
-      color: #ccc;
-    }
-
-    footer {
-      text-align: center;
-      margin-top: 40px;
-      font-size: 0.9em;
-      color: #777;
-    }
-
-    @media (max-width: 600px) {
-      .menu-container {
-        padding: 20px 15px;
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Occidental Hotel Bistro Menu</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 20px;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #111;
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        min-height: 100vh;
       }
 
-      ul li {
-        flex-direction: column;
-        align-items: flex-start;
+      .menu-container {
+        background-color: rgba(34, 34, 34, 0.95);
+        padding: 30px 20px;
+        max-width: 800px;
+        width: 100%;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        border-radius: 12px;
+        text-align: center;
+      }
+
+      header img {
+        width: 200px;
+        margin-bottom: 10px;
+      }
+
+      .menu-title {
+        font-size: 2.5em;
+        margin-top: 10px;
+        color: #fff;
+        position: relative;
+        display: inline-block;
+      }
+
+      .menu-title::after {
+        content: "";
+        display: block;
+        width: 80%;
+        height: 4px;
+        background-color: #8b1f24;
+        margin: 8px auto 0;
+        border-radius: 2px;
+      }
+
+      .menu-section {
+        text-align: left;
+        margin-top: 40px;
+      }
+
+      .menu-section h2 {
+        font-size: 1.8em;
+        color: #fff;
+        margin-bottom: 20px;
+        position: relative;
+      }
+
+      .menu-section h2::after {
+        content: "";
+        display: block;
+        width: 60%;
+        height: 3px;
+        background-color: #8b1f24;
+        margin-top: 5px;
+        border-radius: 2px;
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      li {
+        margin-bottom: 20px;
+        border-bottom: 1px solid #333;
+        padding-bottom: 10px;
+      }
+
+      .item-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .item-name {
+        font-weight: 600;
+        font-size: 1.1em;
       }
 
       .item-price {
+        font-weight: 600;
+        color: #ccc;
+        font-size: 1.1em;
+      }
+
+      .item-description {
         margin-top: 5px;
         font-size: 0.95em;
+        color: #bbb;
       }
-    }
-  </style>
-</head>
-<body>
-  <div class="menu-container">
-    <header>
-      <h1>Occidental Hotel Bistro</h1>
-      <p class="tagline">Burgers • Sandwiches • Pub Classics</p>
-    </header>
 
-    <section class="menu-section">
-      <h2>Burgers and Sandwiches</h2>
-      <ul>
-        <li><span class="item-name">Occy Burger</span><span class="item-price">$22</span></li>
-        <li><span class="item-name">Spicy Chicken Burger</span><span class="item-price">$21</span></li>
-        <li><span class="item-name">Veggie Burger (V)</span><span class="item-price">$21</span></li>
-        <li><span class="item-name">Club Sandwich</span><span class="item-price">$21</span></li>
-        <li><span class="item-name">Grainge Beef Fillet Steak Sandwich</span><span class="item-price">$22</span></li>
-      </ul>
-    </section>
+      footer {
+        text-align: center;
+        margin-top: 50px;
+        font-size: 0.9em;
+        color: #777;
+      }
 
-    <section class="menu-section">
-      <h2>Pub Classics</h2>
-      <ul>
-        <li><span class="item-name">Angus Rump Steak (250g)</span><span class="item-price">$29</span></li>
-        <li><span class="item-name">New York Sirloin (250g)</span><span class="item-price">$31</span></li>
-        <li><span class="item-name">Chicken Breast Schnitzel</span><span class="item-price">$22</span></li>
-        <li><span class="item-name">Chicken Parmigiana</span><span class="item-price">$25</span></li>
-        <li><span class="item-name">Braised Beef Rib</span><span class="item-price">$27</span></li>
-        <li><span class="item-name">Fish and Chips</span><span class="item-price">$22</span></li>
-      </ul>
-    </section>
+      @media (max-width: 600px) {
+        .menu-container {
+          padding: 20px 15px;
+        }
+        .item-header {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+        .item-price {
+          margin-top: 5px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="menu-container">
+      <header>
+        <img src="occi-logo.png" alt="Occidental Hotel Logo" />
+        <div class="menu-title">Bistro Menu</div>
+        <p class="tagline">Burgers • Sandwiches • Pub Classics</p>
+      </header>
 
-    <section class="menu-section">
-      <h2>Snacks and Sharing</h2>
-      <ul>
-        <li><span class="item-name">Hot Chips</span><span class="item-price">$11</span></li>
-        <li><span class="item-name">Seasoned Wedges</span><span class="item-price">$12</span></li>
-        <li><span class="item-name">Hot Chicken Wings (10pc)</span><span class="item-price">$13</span></li>
-        <li><span class="item-name">Cheeseburger Spring Rolls</span><span class="item-price">$15</span></li>
-        <li><span class="item-name">Squid Rings</span><span class="item-price">$19</span></li>
-        <li><span class="item-name">Arancini Balls</span><span class="item-price">$15</span></li>
-        <li><span class="item-name">Karaage Chicken Pieces</span><span class="item-price">$18</span></li>
-        <li><span class="item-name">Nachos</span><span class="item-price">$18</span></li>
-      </ul>
-    </section>
+      <section class="menu-section">
+        <h2>Burgers and Sandwiches</h2>
+        <ul>
+          <li>
+            <div class="item-header">
+              <span class="item-name">Occy Burger</span>
+              <span class="item-price">$22</span>
+            </div>
+            <div class="item-description">
+              Prime beef patty with cheddar cheese, lettuce, tomato, onion,
+              pickles, aioli on a milk bun.
+            </div>
+          </li>
+          <li>
+            <div class="item-header">
+              <span class="item-name">Spicy Chicken Burger</span>
+              <span class="item-price">$21</span>
+            </div>
+            <div class="item-description">
+              Chicken breast fillet marinated in buttermilk with spicy chipotle
+              sauce and slaw.
+            </div>
+          </li>
+          <li>
+            <div class="item-header">
+              <span class="item-name">Veggie Burger (V)</span>
+              <span class="item-price">$21</span>
+            </div>
+            <div class="item-description">
+              Plant-based patty with grilled vegetables, hummus, and mixed
+              greens on a milk bun.
+            </div>
+          </li>
+          <li>
+            <div class="item-header">
+              <span class="item-name">Club Sandwich</span>
+              <span class="item-price">$21</span>
+            </div>
+            <div class="item-description">
+              Chicken breast, bacon, avocado, lettuce, tomato, cheddar cheese on
+              toasted bread.
+            </div>
+          </li>
+          <li>
+            <div class="item-header">
+              <span class="item-name">Grainge Beef Fillet Steak Sandwich</span>
+              <span class="item-price">$22</span>
+            </div>
+            <div class="item-description">
+              150g Angus beef steak, rocket, tomato relish, aioli in a toasted
+              Turkish roll.
+            </div>
+          </li>
+        </ul>
+      </section>
 
-    <section class="menu-section">
-      <h2>Salad Bar</h2>
-      <ul>
-        <li><span class="item-name">Salmon Bowl</span><span class="item-price">$25</span></li>
-        <li><span class="item-name">Chicken Caesar Salad</span><span class="item-price">$22</span></li>
-        <li><span class="item-name">Haloumi Salad (V)</span><span class="item-price">$22</span></li>
-      </ul>
-    </section>
+      <section class="menu-section">
+        <h2>Pub Classics</h2>
+        <ul>
+          <li>
+            <div class="item-header">
+              <span class="item-name">Angus Rump Steak (250g)</span>
+              <span class="item-price">$29</span>
+            </div>
+            <div class="item-description">
+              Grilled Angus rump steak cooked to your liking served with salad
+              and fries.
+            </div>
+          </li>
+          <li>
+            <div class="item-header">
+              <span class="item-name">New York Sirloin (250g)</span>
+              <span class="item-price">$31</span>
+            </div>
+            <div class="item-description">
+              250g New York sirloin steak with mash potato, seasonal veggies and
+              gravy.
+            </div>
+          </li>
+          <li>
+            <div class="item-header">
+              <span class="item-name">Chicken Breast Schnitzel</span>
+              <span class="item-price">$22</span>
+            </div>
+            <div class="item-description">
+              Crumbed chicken schnitzel served with garden salad and fries.
+            </div>
+          </li>
+          <li>
+            <div class="item-header">
+              <span class="item-name">Chicken Parmigiana</span>
+              <span class="item-price">$25</span>
+            </div>
+            <div class="item-description">
+              Schnitzel topped with Napoli sauce, ham, mozzarella cheese, served
+              with salad and chips.
+            </div>
+          </li>
+          <li>
+            <div class="item-header">
+              <span class="item-name">Braised Beef Rib</span>
+              <span class="item-price">$27</span>
+            </div>
+            <div class="item-description">
+              Slow-cooked beef short rib served with mashed potato and green
+              beans.
+            </div>
+          </li>
+          <li>
+            <div class="item-header">
+              <span class="item-name">Fish and Chips</span>
+              <span class="item-price">$22</span>
+            </div>
+            <div class="item-description">
+              Beer-battered flathead fillets served with tartare sauce and
+              chips.
+            </div>
+          </li>
+        </ul>
+      </section>
 
-    <footer>
-      <p>Thank you for dining with us!</p>
-    </footer>
-  </div>
-</body>
+      <section class="menu-section">
+        <h2>Snacks and Sharing</h2>
+        <ul>
+          <li>
+            <div class="item-header">
+              <span class="item-name">Hot Chips</span>
+              <span class="item-price">$11</span>
+            </div>
+            <div class="item-description">
+              With classic chicken salt seasoning.
+            </div>
+          </li>
+          <li>
+            <div class="item-header">
+              <span class="item-name">Seasoned Wedges</span>
+              <span class="item-price">$12</span>
+            </div>
+            <div class="item-description">
+              Served with sweet chili sauce and sour cream.
+            </div>
+          </li>
+          <li>
+            <div class="item-header">
+              <span class="item-name">Hot Chicken Wings</span>
+              <span class="item-price">$13</span>
+            </div>
+            <div class="item-description">
+              Buffalo-style wings with spicy dipping sauce.
+            </div>
+          </li>
+          <li>
+            <div class="item-header">
+              <span class="item-name">Cheeseburger Spring Rolls</span>
+              <span class="item-price">$15</span>
+            </div>
+            <div class="item-description">
+              Spring rolls filled with ground beef, cheese, pickles, ketchup and
+              mustard.
+            </div>
+          </li>
+          <li>
+            <div class="item-header">
+              <span class="item-name">Squid Rings</span>
+              <span class="item-price">$19</span>
+            </div>
+            <div class="item-description">
+              Tempura squid rings served with aioli and lemon wedge.
+            </div>
+          </li>
+          <li>
+            <div class="item-header">
+              <span class="item-name">Arancini Balls</span>
+              <span class="item-price">$15</span>
+            </div>
+            <div class="item-description">
+              Mushroom and cheese risotto balls served with ranch dipping sauce.
+            </div>
+          </li>
+          <li>
+            <div class="item-header">
+              <span class="item-name">Karaage Chicken Pieces</span>
+              <span class="item-price">$18</span>
+            </div>
+            <div class="item-description">
+              Japanese fried chicken with wasabi mayo dipping sauce.
+            </div>
+          </li>
+          <li>
+            <div class="item-header">
+              <span class="item-name">Nachos</span>
+              <span class="item-price">$18</span>
+            </div>
+            <div class="item-description">
+              Corn chips with spicy beef, cheese sauce, sour cream, guacamole.
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <section class="menu-section">
+        <h2>Salad Bar</h2>
+        <ul>
+          <li>
+            <div class="item-header">
+              <span class="item-name">Salmon Bowl</span>
+              <span class="item-price">$25</span>
+            </div>
+            <div class="item-description">
+              Mixed greens, teriyaki salmon, cucumber, tomato, avocado and
+              sesame dressing.
+            </div>
+          </li>
+          <li>
+            <div class="item-header">
+              <span class="item-name">Chicken Caesar Salad</span>
+              <span class="item-price">$22</span>
+            </div>
+            <div class="item-description">
+              Cos lettuce, chicken breast, parmesan cheese, soft boiled egg,
+              Caesar dressing, croutons.
+            </div>
+          </li>
+          <li>
+            <div class="item-header">
+              <span class="item-name">Haloumi Salad (V)</span>
+              <span class="item-price">$22</span>
+            </div>
+            <div class="item-description">
+              Grilled haloumi, cucumber, mixed leaves, beetroot, onion, honey
+              mustard dressing.
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <footer>
+        <p>Thank you for dining with us!</p>
+      </footer>
+    </div>
+  </body>
 </html>
